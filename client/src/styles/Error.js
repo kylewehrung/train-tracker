@@ -10,8 +10,8 @@ function Error({ children }) {
 }
 
 const Wrapper = styled.div`
-  color: red;
-  background-color: mistyrose;
+  color: black;
+  background-image: linear-gradient(rgba(225, 185, 185), rgba(225, 255, 255, 0.9));
   border-radius: 6px;
   display: flex;
   padding: 8px;

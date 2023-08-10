@@ -8,7 +8,7 @@ import UpdateTicket from "../pages/UpdateTicket";
 import UserList from "../pages/UserList";
 import TrainList from "../pages/TrainList";
 import NewTrain from "../pages/NewTrain";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 
 function App() {
@@ -58,31 +58,23 @@ function App() {
     </AppWrapper>
   );
 }
-const animation = keyframes`
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-`;
+
 const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("https://i.pinimg.com/originals/c8/67/80/c86780dc650d1c20befc59a90011b6b1.jpg");
+  background-image: url("https://wallpaperaccess.com/full/4065930.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 100%;
-  width: 50vw;
-  animation: ${animation} 20s linear infinite;
+  width: 100vw;
   background-attachment: fixed;
 `;
 
 const AppWrapper = styled.div`
   height: 100%;
-  background-image: url("https://i.pinimg.com/originals/c8/67/80/c86780dc650d1c20befc59a90011b6b1.jpg");
+  background-image: url("https://wallpaperaccess.com/full/4065930.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

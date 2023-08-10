@@ -14,7 +14,7 @@ function UserList() {
         },[])
     return (
         <Wrapper>
-        <h1 style={{ fontSize: "2rem", fontFamily: "'Press Start 2P', cursive" }}>Users</h1>
+        <h1 style={{ fontSize: "2rem", fontFamily: "cascadia", color: "#f8f0e3" }}>Users</h1>
             {users.length > 0 ? (
                 users.map((user) => (
                 <User key={user.id}>
@@ -22,10 +22,7 @@ function UserList() {
                     <h3>{"User ID: "+user.id}</h3>
                     <h3>{"Name: "+user.username}</h3>
                     <Image src={user.image_url}/>
-                    <h3>{"Bio: "+user.bio}</h3>
-                    {/* <h2>{"User Train: "+user.train}</h2> */}
-                    {/* <h2>{"User: "+user.ticket}</h2>
-                    <ReactMarkdown>{user.description}</ReactMarkdown> */}
+                    <h3>{"Featured Bar: "+user.bio}</h3>
                     </Box>
                 </User>
                 ))

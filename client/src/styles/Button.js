@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const COLORS = {
   primary: {
+    "--main": "black",
+    "--accent": "#f8f0e3",
+  },
+  secondary: {
+    "--main": "black",
     "--accent": "#f8f0e3",
   },
 };
@@ -31,13 +36,13 @@ const FillButton = styled(ButtonBase)`
   color: var(--accent);
 
   &:hover {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 `;
 
 const OutlineButton = styled(ButtonBase)`
   background-color: white;
-  color: var(--main);
+  color: 
   border: 2px solid var(--main);
 
   &:hover {

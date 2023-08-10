@@ -18,11 +18,6 @@ function NewTrain() {
             title: title,
             image_url: image,
             description: description,
-    //   origin: origin,
-    //   destination: destination,
-    //   departure_time: departureTime,
-    //   arrival_time: arrivalTime,
-    //   capacity: capacity,
         };
         fetch("/api/trains", {
             method: "POST",
@@ -41,12 +36,12 @@ function NewTrain() {
     }
 
   return (
-    <Wrapper>
-      <WrapperChild>
-        <h1 style={{ fontSize: "2rem", fontFamily: "'Press Start 2P', cursive" }}>Create Train</h1>
-        <form onSubmit={handleSubmit}>
-        <FormField>
-  <Label htmlFor="title" style={{ color: "black", fontSize:"1.5em" }}>Title</Label>
+<Wrapper>
+  <WrapperChild>
+    <Heading style={{ fontSize: "3rem", fontFamily: "cascadia", color: "#f8f0e3" }}>Create Train</Heading>
+    <form onSubmit={handleSubmit}>
+    <FormField>
+  <Label htmlFor="title" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Title</Label>
   <Input
     type="text"
     id="title"
@@ -55,7 +50,7 @@ function NewTrain() {
   />
 </FormField>
 <FormField>
-  <Label htmlFor="description" style={{ color: "black", fontSize:"1.5em" }}>Description</Label>
+  <Label htmlFor="description" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Description</Label>
   <Input
     type="text"
     id="description"
@@ -64,7 +59,7 @@ function NewTrain() {
   />
 </FormField>
 <FormField>
-  <Label htmlFor="image" style={{ color: "black", fontSize:"1.5em" }}>Image</Label>
+  <Label htmlFor="image" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Image</Label>
   <Input
     type="text"
     id="image"
@@ -73,51 +68,7 @@ function NewTrain() {
   />
 </FormField>
 
-          {/* <FormField>
-            <Label htmlFor="origin">Origin</Label>
-            <Input
-              type="text"
-              id="origin"
-              value={origin}
-              onChange={(e) => setOrigin(e.target.value)}
-            />
-          </FormField>
-          <FormField>
-            <Label htmlFor="destination">Destination</Label>
-            <Input
-              type="text"
-              id="destination"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-            />
-          </FormField>
-          <FormField>
-            <Label htmlFor="departureTime">Departure Time</Label>
-            <Input
-              type="datetime-local"
-              id="departureTime"
-              value={departureTime}
-              onChange={(e) => setDepartureTime(e.target.value)}
-            />
-          </FormField>
-          <FormField>
-            <Label htmlFor="arrivalTime">Arrival Time</Label>
-            <Input
-              type="datetime-local"
-              id="arrivalTime"
-              value={arrivalTime}
-              onChange={(e) => setArrivalTime(e.target.value)}
-            />
-          </FormField>
-          <FormField>
-            <Label htmlFor="capacity">Capacity</Label>
-            <Input
-              type="number"
-              id="capacity"
-              value={capacity}
-              onChange={(e) => setCapacity(e.target.value)}
-            />
-          </FormField> */}
+
           <FormField>
             <Button color="primary" type="submit">
               {isLoading ? "Loading..." : "Create Train"}
@@ -144,10 +95,22 @@ const Wrapper = styled.section`
 
 const WrapperChild = styled.div`
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -130%);
     width: 400px;
 `;
+
+
+
+const Heading = styled.h1`
+  font-size: 3rem;
+  font-family: cascadia;
+  color: #f8f0e3;
+  text-align: center; /* Center the heading text */
+  margin-bottom: 20px; /* Add some space between the heading and the form */
+`;
+
+
 
 export default NewTrain;

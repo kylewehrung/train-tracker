@@ -49,7 +49,7 @@ function NewTicket({ user }) {
         <Heading>Create Ticket</Heading>
         <form onSubmit={handleSubmit}>
           <FormField>
-            <Label htmlFor="price" style={{ color: "black", fontSize:"1.5em" }}>Price</Label>
+            <Label htmlFor="price" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Price</Label>
             <Input
               type="number"
               id="price"
@@ -58,7 +58,7 @@ function NewTicket({ user }) {
             />
           </FormField>
           <FormField>
-            <Label htmlFor="trainId" style={{ color: "black", fontSize:"1.5em" }}>Existing Train ID</Label>
+            <Label htmlFor="trainId" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Existing Train ID</Label>
             <Input
               type="number"
               id="trainId"
@@ -67,7 +67,7 @@ function NewTicket({ user }) {
             />
           </FormField>
           <FormField>
-            <Label htmlFor="userId" style={{ color: "black", fontSize:"1.5em" }}>Existing User ID</Label>
+            <Label htmlFor="userId" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Existing User ID</Label>
             <Input
               type="number"
               id="userId"
@@ -99,15 +99,18 @@ const Wrapper = styled.section`
 
 const WrapperChild = styled.div`
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -130%);
     width: 400px;
 `;
 
 const Heading = styled.h1`
-  font-size: 2rem;
-  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  color: #f8f0e3;
+  top: -50%;
+  font-size: 3rem;
+  font-family: 'cascadia';
   white-space: nowrap;
 `;
 

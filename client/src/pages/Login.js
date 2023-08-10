@@ -15,23 +15,23 @@ function Login({ onLogin }) {
         <>
           <LoginForm onLogin={onLogin} />
           <Divider />
-          <p>
+          <CustomLabel>
             Don't have an account? &nbsp;
             <Button color="secondary" onClick={() => setShowLogin(false)}>
               Sign Up
             </Button>
-          </p>
+          </CustomLabel>
         </>
       ) : (
         <>
           <SignUpForm onLogin={onLogin} />
           <Divider />
-          <p>
+          <CustomLabel>
             Already have an account? &nbsp;
             <Button color="secondary" onClick={() => setShowLogin(true)}>
               Log In
             </Button>
-          </p>
+          </CustomLabel>
         </>
       )}
     </Wrapper>
@@ -40,7 +40,7 @@ function Login({ onLogin }) {
 
 const Logo = styled.h1`
   font-family: "cascadia";
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: black;
   margin: 0;
 `;
@@ -60,7 +60,7 @@ const Wrapper = styled.section`
 
   & > form {
     position: relative;
-    width: 400px;
+    width: 480px;
     margin-top: 30px;
   }
 
@@ -74,5 +74,22 @@ const Divider = styled.hr`
   border-bottom: 1px solid #ccc;
   margin: 16px 0;
 `;
+
+
+
+
+const CustomLabel = styled.label`
+  color: black;
+  background-image: linear-gradient(rgba(225, 185, 185, 0.75), rgba(225, 255, 255, 0.9));
+  background-size: 240% auto; /* Adjust the width */
+  background-origin: border-box; /* Apply gradient within the border box */
+  border-radius: 10px; /* Adjust the corner radius */
+  padding: 10px; /* Add padding for better appearance */
+  font-size: 1.2em;
+  font-family: cascadia;
+`;
+
+
+
 
 export default Login;

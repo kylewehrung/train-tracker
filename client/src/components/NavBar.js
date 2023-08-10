@@ -54,7 +54,7 @@ const Wrapper = styled.header`
 const Logo = styled.h1`
   color: #f8f0e3;
   font-family: "cascadia";
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 0;
   line-height: 1;
 

@@ -5,6 +5,9 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 
+
+
+
 function SignUpForm({ onLogin }) {
  
   
@@ -29,6 +32,8 @@ function SignUpForm({ onLogin }) {
       image_url: "",
       bio: "",
     },
+    validateOnChange: false,
+    validateOnBlur: false,
     validationSchema,
     onSubmit: (values, { setErrors, setSubmitting }) => {
       setSubmitting(true);
@@ -55,12 +60,17 @@ function SignUpForm({ onLogin }) {
     },
   });
 
+
+
+
+
+
   return (
     <Wrapper>
     <form onSubmit={formik.handleSubmit}>
     <FormFields>
       <FormField>
-      <WhiteLabel htmlFor="username">Username</WhiteLabel>
+      <CustomLabel htmlFor="username">Username</CustomLabel>
         <WhiteInput
           type="text"
           id="username"
@@ -70,7 +80,7 @@ function SignUpForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-        <WhiteLabel htmlFor="password">Password</WhiteLabel>
+        <CustomLabel htmlFor="password">Password</CustomLabel>
         <WhiteInput
           type="password"
           id="password"
@@ -80,7 +90,7 @@ function SignUpForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-        <WhiteLabel htmlFor="passwordcConfirmation">Password Confirmation</WhiteLabel>
+        <CustomLabel htmlFor="passwordcConfirmation">Password Confirmation</CustomLabel>
         <WhiteInput
           type="password"
           id="passwordConfirmation"
@@ -90,7 +100,7 @@ function SignUpForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-        <WhiteLabel htmlFor="image_url">Profile Image</WhiteLabel>
+        <CustomLabel htmlFor="image_url">Profile Image</CustomLabel>
         <WhiteInput
           type="text"
           id="image_url"
@@ -99,9 +109,9 @@ function SignUpForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-        <WhiteLabel htmlFor="bio">Bio</WhiteLabel>
+        <CustomLabel htmlFor="bio">Bio</CustomLabel>
         <WhiteTextarea
-          rows="3"
+          rows="4"
           id="bio"
           value={formik.values.bio}
           onChange={formik.handleChange}
@@ -130,18 +140,27 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  position: relative;
+  
 `;
 
 const FormFields = styled.div`
   width: 400px;
 `;
 
-const WhiteLabel = styled(Label)`
-  color: #4E79D4;
-  font-size: 1.5em; 
-  font-family: 'Press Start 2P', cursive;
+
+
+const CustomLabel = styled.label`
+  color: black;
+  background-image: linear-gradient(rgba(225, 185, 185, 0.75), rgba(225, 255, 255, 0.9));
+  background-size: 240% auto; /* Adjust the width */
+  background-origin: border-box; /* Apply gradient within the border box */
+  border-radius: 25px; /* Adjust the corner radius */
+  padding: 10px; /* Add padding for better appearance */
+  font-size: 2em;
+  font-family: cascadia;
 `;
+
 
 const WhiteInput = styled(Input)`
   color: black;
@@ -149,6 +168,9 @@ const WhiteInput = styled(Input)`
 
 const WhiteTextarea = styled(Textarea)`
   color: black;
+  border-radius: 25px; /* Adjust the corner radius */
+  font-size: 22px;
 `;
+
 
 export default SignUpForm;
