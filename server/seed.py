@@ -91,20 +91,30 @@ with app.app_context():
     print("Creating tickets...")
 
 
+    available_users = list(users)
+    available_trains = list(trains)
+
     tickets = []
 
     for _ in range(10):
 
         price = random.randrange(50, 201)
-
         price = (price // 5) * 5
 
         ticket = Ticket(
             price=price,
         )
 
-        ticket.user = rc(users)
-        ticket.train = rc(trains)
+        # Check if there are available users and trains
+        if available_users and available_trains:
+            user = rc(available_users)
+            train = rc(available_trains)
+
+            ticket.user = user
+            ticket.train = train
+
+            available_users.remove(user)  # Remove assigned user from the available list
+            
         tickets.append(ticket)
 
     db.session.add_all(tickets)

@@ -66,7 +66,7 @@ function UpdateTicket({ user }) {
       <Heading>Edit Ticket</Heading>
       <form onSubmit={handleSubmit}>
         <FormField>
-          <Label htmlFor="price">Price:</Label>
+        <Label htmlFor="title" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Price:</Label>
           <Input
             type="number"
             name="price"
@@ -77,7 +77,7 @@ function UpdateTicket({ user }) {
           />
         </FormField>
         <FormField>
-          <Label htmlFor="train_id">Train:</Label>
+        <Label htmlFor="title" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Train Number:</Label>
           <Input
             type="number"
             name="train_id"
@@ -88,7 +88,7 @@ function UpdateTicket({ user }) {
           />
         </FormField>
         <FormField>
-          <Label htmlFor="user_id">User:</Label>
+        <Label htmlFor="title" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>User Number:</Label>
           <Input
             type="number"
             name="user_id"

@@ -18,17 +18,11 @@ function NavBar({ user, setUser }) {
         <Link to="/tickets">Train Tracker</Link>
       </Logo>
       <Nav>
-        <Button as={Link} to="/users">
-          Users
-        </Button>
-        <Button as={Link} to="/trains">
-            Trains
-          </Button>
         <Button as={Link} to="/new_train">
-          New Train
+          Add Train
         </Button>
         <Button as={Link} to="/new_ticket">
-          New Ticket
+          Add Ticket
         </Button>
         <Button onClick={handleLogoutClick}>
           Logout

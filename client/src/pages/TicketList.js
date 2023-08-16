@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
 
@@ -27,7 +27,7 @@ function TicketList() {
 
   return (
     <Wrapper>
-      <h1 style={{ fontSize: "2rem", fontFamily: "cascadia", color: "#f8f0e3", textAlign: "center",}}>
+      <h1 style={{ fontSize: "2rem", fontFamily: "cascadia", color: "#f8f0e3", textAlign: "center"}}>
         Tickets
       </h1>
       {tickets.length > 0 ? (
@@ -35,18 +35,18 @@ function TicketList() {
           <Ticket key={ticket.id}>
 
             <Box>
-              <h3>{"Ticket ID: " + ticket.id}</h3>
+              <h3>{"Ticket Number: " + ticket.id}</h3>
               <h3>{"Price: $" + ticket.price}</h3>
               <CustomLink to={`/trains/${ticket.train.id}`}>
                 <h3>{"Train: " + ticket.train.title}</h3>
-              <h3>{"Train ID: " + ticket.train.id}</h3>
+              <h3>{"Train Number: " + ticket.train.id}</h3>
                 <Image src={ticket.train.image_url} alt={`Train ${ticket.train.title}`} />
               </CustomLink>
 
 
               <CustomLink to={`users/${ticket.user.id}`} >
               <h3>{"Passenger: " + ticket.user.username}</h3>
-              <h3>{"User ID: " + ticket.user.id}</h3>
+              <h3>{"Passenger Number: " + ticket.user.id}</h3>
               <Image src={ticket.user.image_url} alt={`Passenger ${ticket.user.username}`} />
               </CustomLink>
               <CustomContainer>
@@ -60,7 +60,7 @@ function TicketList() {
               <Button 
               as={Link} to={`/update/${ticket.id}/edit`}
               style={{  marginTop: "15px", backgroundColor: "black", color: "#f8f0e3" }}
-              > Update Ticket
+              > Edit Ticket
               </Button>
 
               </CustomContainer>
@@ -86,7 +86,7 @@ function TicketList() {
 const Wrapper = styled.section`
   width: 750px;
   margin: 40px auto;
-  transform: translate(0, 1%);
+  
 `;
 
 

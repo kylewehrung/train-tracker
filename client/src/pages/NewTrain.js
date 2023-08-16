@@ -35,43 +35,44 @@ function NewTrain() {
         });
     }
 
-  return (
-<Wrapper>
-  <WrapperChild>
-    <Heading style={{ fontSize: "3rem", fontFamily: "cascadia", color: "#f8f0e3" }}>Create Train</Heading>
-    <form onSubmit={handleSubmit}>
-    <FormField>
-  <Label htmlFor="title" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Title</Label>
-  <Input
-    type="text"
-    id="title"
-    value={title}
-    onChange={(e) => setTitle(e.target.value)}
-  />
-</FormField>
-<FormField>
-  <Label htmlFor="description" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Description</Label>
-  <Input
-    type="text"
-    id="description"
-    value={description}
-    onChange={(e)=>setDescription(e.target.value)}
-  />
-</FormField>
-<FormField>
-  <Label htmlFor="image" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Image</Label>
-  <Input
-    type="text"
-    id="image"
-    value={image}
-    onChange={(e)=>setImage(e.target.value)}
-  />
-</FormField>
+    
 
+  return (
+          <Wrapper>
+            <WrapperChild>
+              <Heading style={{ fontSize: "3rem", fontFamily: "cascadia", color: "#f8f0e3" }}>Add Train</Heading>
+              <form onSubmit={handleSubmit}>
+              <FormField>
+            <Label htmlFor="title" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Title:</Label>
+            <Input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </FormField>
+          <FormField>
+            <Label htmlFor="description" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Description:</Label>
+            <Input
+              type="text"
+              id="description"
+              value={description}
+              onChange={(e)=>setDescription(e.target.value)}
+            />
+          </FormField>
+          <FormField>
+            <Label htmlFor="image" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Image:</Label>
+            <Input
+              type="text"
+              id="image"
+              value={image}
+              onChange={(e)=>setImage(e.target.value)}
+            />
+          </FormField>
 
           <FormField>
             <Button color="primary" type="submit">
-              {isLoading ? "Loading..." : "Create Train"}
+              {isLoading ? "Loading..." : "Add Train"}
             </Button>
           </FormField>
           <FormField>

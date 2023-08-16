@@ -27,17 +27,19 @@ const TrainList = () => {
 
     return (
         <Wrapper>
-        <h1 style={{ fontSize: "2rem", fontFamily: "cascadia", color: "#f8f0e3" }}>Trains</h1>
+        <h1 style={{ fontSize: "2rem", fontFamily: "cascadia", color: "#f8f0e3", textAlign: "center" }}>Trains</h1>
             {trains.length > 0 ? (
                 trains.map((train) => (
                     <Train key={train.id}>
                         <Box>
-                            <h3>{"Train ID: "+train.id}</h3>
+                            <h3>{"Train Number: "+train.id}</h3>
                             <h3>{"Name: "+train.title}</h3>
                             <h3>{train.description}</h3>
                             <Image src={train.image_url}/>
                             <div>
-                            <Button onClick={() => handleDeleteTrain(train.id)}>
+                            <Button onClick={() => handleDeleteTrain(train.id)}
+                             style={{  marginTop: "15px", backgroundColor: "black", color: "#f8f0e3" }}
+                            >
                                 Delete train
                             </Button>
                             </div>
@@ -58,9 +60,8 @@ const TrainList = () => {
 
 
 const Wrapper = styled.section`
-    max-width: 800px;
+    width: 750px;
     margin: 40px auto;
-    transform: translate(0, 7%);
 `;
 
 
@@ -71,9 +72,14 @@ const Train = styled.article`
 `;
 
 const Image = styled.img`
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.2s; 
+
+&:hover {
+  transform: scale(1.1); 
+}
 `;
 
 export default TrainList

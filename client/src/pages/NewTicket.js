@@ -42,13 +42,15 @@ function NewTicket({ user }) {
       });
   }
 
+  
+
   return (
     <Wrapper>
       <WrapperChild>
         <Heading>Create Ticket</Heading>
         <form onSubmit={handleSubmit}>
           <FormField>
-            <Label htmlFor="price" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Price</Label>
+            <Label htmlFor="price" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Price:</Label>
             <Input
               type="number"
               id="price"
@@ -57,7 +59,7 @@ function NewTicket({ user }) {
             />
           </FormField>
           <FormField>
-            <Label htmlFor="trainId" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Existing Train ID</Label>
+            <Label htmlFor="trainId" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Train Number:</Label>
             <Input
               type="number"
               id="trainId"
@@ -66,7 +68,7 @@ function NewTicket({ user }) {
             />
           </FormField>
           <FormField>
-            <Label htmlFor="userId" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Existing User ID</Label>
+            <Label htmlFor="userId" style={{ color: "#f8f0e3", fontSize:"1.5em" }}>Passenger Number:</Label>
             <Input
               type="number"
               id="userId"
@@ -75,7 +77,7 @@ function NewTicket({ user }) {
             />
           </FormField>
           <FormField>
-            <StyledButton type="submit" isLoading={isLoading}>Submit Ticket</StyledButton>
+            <StyledButton type="submit" isLoading={isLoading}>Add Ticket</StyledButton>
           </FormField>
           <FormField>
             {errors.map((err) => (
