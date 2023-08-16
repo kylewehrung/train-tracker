@@ -94,10 +94,9 @@ with app.app_context():
     tickets = []
 
     for _ in range(10):
-        # Generate a random price between 50 and 200 (inclusive)
+
         price = random.randrange(50, 201)
 
-        # Ensure the price is a multiple of 5
         price = (price // 5) * 5
 
         ticket = Ticket(

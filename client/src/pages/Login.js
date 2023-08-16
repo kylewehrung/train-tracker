@@ -82,7 +82,7 @@ const Divider = styled.hr`
 
 const CustomContainer = styled.div`
   display: flex;
-  align-items: center; /* Vertically align items */
+  align-items: center; 
 `;
 
 
@@ -90,10 +90,10 @@ const CustomContainer = styled.div`
 const CustomLabel = styled.label`
   color: black;
   background-image: linear-gradient(rgba(225, 185, 185, 0.75), rgba(225, 255, 255, 0.9));
-  background-size: 240% auto; /* Adjust the width */
-  background-origin: border-box; /* Apply gradient within the border box */
-  border-radius: 10px; /* Adjust the corner radius */
-  padding: 10px; /* Add padding for better appearance */
+  background-size: 240% auto; 
+  background-origin: border-box; 
+  border-radius: 10px; 
+  padding: 10px; 
   font-size: 1.2em;
   font-family: cascadia;
 `;

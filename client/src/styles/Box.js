@@ -8,7 +8,7 @@ const Box = styled.div`
   background-color: rgba(255, 255, 255, 0.65);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
+  align-items: center; 
   text-align: center;
 `;
 

@@ -91,12 +91,10 @@ class TicketIndex(Resource):
             request_json = request.get_json()
             price = request_json['price']
             description = request_json['description']
-            # minutes_to_complete = request_json['minutes_to_complete']
             try:
                 ticket = Ticket(
                     price=price,
                     description=description,
-                    # minutes_to_complete=minutes_to_complete,
                     user_id=session['user_id'],
                 )
                 db.session.add(ticket)
