@@ -171,9 +171,7 @@ class Tickets(Resource):
         data =request.get_json()
         ticket = Ticket(
             price = data['price'],
-            # train - data["train"],
             train_id = data['train_id'],
-            #user = data["user"],
             user_id = data["user_id"]
         )
         db.session.add(ticket)

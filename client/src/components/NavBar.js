@@ -30,7 +30,7 @@ function NavBar({ user, setUser }) {
         <Button as={Link} to="/new_ticket">
           New Ticket
         </Button>
-        <Button variant="outline" onClick={handleLogoutClick}>
+        <Button onClick={handleLogoutClick}>
           Logout
         </Button>
       </Nav>

@@ -63,7 +63,7 @@ const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("https://wallpaperaccess.com/full/4065930.jpg");
+  background-image: url("https://www.wallpaperflare.com/static/962/763/777/flower-starry-night-night-time-poppy-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -74,7 +74,7 @@ const MainContainer = styled.main`
 
 const AppWrapper = styled.div`
   height: 100%;
-  background-image: url("https://wallpaperaccess.com/full/4065930.jpg");
+  background-image: url("https://www.wallpaperflare.com/static/962/763/777/flower-starry-night-night-time-poppy-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

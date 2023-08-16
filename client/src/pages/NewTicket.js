@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 import styled from "styled-components";
-// import ReactMarkdown from "react-markdown";
 import { Button, Error, FormField, Input, Label} from "../styles";
 
 function NewTicket({ user }) {
@@ -99,19 +98,20 @@ const Wrapper = styled.section`
 
 const WrapperChild = styled.div`
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -130%);
     width: 400px;
 `;
 
+
+
 const Heading = styled.h1`
-  position: absolute;
-  color: #f8f0e3;
-  top: -50%;
   font-size: 3rem;
-  font-family: 'cascadia';
-  white-space: nowrap;
+  font-family: cascadia;
+  color: #f8f0e3;
+  text-align: center; 
+  margin-bottom: 20px; 
 `;
 
 const StyledButton = styled(Button)`

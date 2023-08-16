@@ -41,9 +41,11 @@ function TicketList() {
               <h3>{"Price: $"+ticket.price}</h3>
               <h3>{"Train: "+ticket.train.title}</h3>
               <h3>{"Train ID: "+ticket.train.id}</h3>
-              <h3>{"User: "+ticket.user.username}</h3>
+              <Image src={ticket.train.image_url}/>
+              <h3>{"Passenger: "+ticket.user.username}</h3>
               <h3>{"User ID: "+ticket.user.id}</h3>
-              <Button onClick={() => handleDeleteTicket(ticket.id)} style={{marginRight: "10px", backgroundColor: "#4E79D4", color: "white"}}>
+              <Image src={ticket.user.image_url} alt={`Passenger ${ticket.user.username}`} />
+              <Button onClick={() => handleDeleteTicket(ticket.id)} style={{marginRight: "10px", backgroundColor: "black", color: "#f8f0e3"}}>
                 Delete ticket
               </Button>
               <Button as={Link} to={`/update/${ticket.id}/edit`}>
@@ -66,6 +68,10 @@ function TicketList() {
   );
 }
 
+
+
+
+
 const Wrapper = styled.section`
   max-width: 800px;
   margin: 40px auto;
@@ -77,6 +83,15 @@ const Ticket = styled.article`
   margin-right: 10px;
   box-shadow: 0 0 10px rgba(0,0,0, 0.2);
 `;
+
+
+const Image = styled.img`
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+`;
+
+
 
 
 export default TicketList;

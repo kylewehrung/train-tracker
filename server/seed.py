@@ -1,5 +1,5 @@
 from random import randint, choice as rc
-
+import random
 from faker import Faker
 
 from app import app
@@ -89,11 +89,19 @@ with app.app_context():
     db.session.add_all(trains)
 
     print("Creating tickets...")
+
+
     tickets = []
-    for i in range(10):
+
+    for _ in range(10):
+        # Generate a random price between 50 and 200 (inclusive)
+        price = random.randrange(50, 201)
+
+        # Ensure the price is a multiple of 5
+        price = (price // 5) * 5
 
         ticket = Ticket(
-            price=20,
+            price=price,
         )
 
         ticket.user = rc(users)
@@ -101,9 +109,9 @@ with app.app_context():
         tickets.append(ticket)
 
     db.session.add_all(tickets)
-
     db.session.commit()
     print("Complete.")
+
 
 
 

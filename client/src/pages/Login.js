@@ -15,23 +15,27 @@ function Login({ onLogin }) {
         <>
           <LoginForm onLogin={onLogin} />
           <Divider />
+          <CustomContainer>
           <CustomLabel>
             Don't have an account? &nbsp;
+          </CustomLabel>
             <Button color="secondary" onClick={() => setShowLogin(false)}>
               Sign Up
             </Button>
-          </CustomLabel>
+            </CustomContainer>
         </>
       ) : (
         <>
           <SignUpForm onLogin={onLogin} />
           <Divider />
+          <CustomContainer>
           <CustomLabel>
             Already have an account? &nbsp;
+          </CustomLabel>
             <Button color="secondary" onClick={() => setShowLogin(true)}>
               Log In
             </Button>
-          </CustomLabel>
+            </CustomContainer>
         </>
       )}
     </Wrapper>
@@ -75,6 +79,11 @@ const Divider = styled.hr`
   margin: 16px 0;
 `;
 
+
+const CustomContainer = styled.div`
+  display: flex;
+  align-items: center; /* Vertically align items */
+`;
 
 
 

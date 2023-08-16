@@ -3,18 +3,8 @@ import { useParams, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Button, FormField, Input, Label } from "../styles";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding-top: 3rem;
-`;
 
-const Heading = styled.h1`
-  font-size: 2rem;
-  font-family: 'Press Start 2P', cursive;
-`;
+
 
 function UpdateTicket({ user }) {
   const [trainId, setTrainId] = useState("");
@@ -72,6 +62,7 @@ function UpdateTicket({ user }) {
   
   return (
     <Wrapper>
+    <WrapperChild>
       <Heading>Edit Ticket</Heading>
       <form onSubmit={handleSubmit}>
         <FormField>
@@ -118,8 +109,43 @@ function UpdateTicket({ user }) {
           </ul>
         )}
       </form>
+      </WrapperChild>
     </Wrapper>
   );
 }
+
+
+
+
+
+const Wrapper = styled.section`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const WrapperChild = styled.div`
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -130%);
+    width: 400px;
+`;
+
+
+
+const Heading = styled.h1`
+  font-size: 3rem;
+  font-family: cascadia;
+  color: #f8f0e3;
+  text-align: center; 
+  margin-bottom: 20px; 
+`;
+
+
+
+
 
 export default UpdateTicket;
