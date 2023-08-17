@@ -66,7 +66,7 @@ with app.app_context():
     trains = []
     titles = ["The California Zephyr", "The Empire Builder", "The Southwest Chief", "The Coast Starlight", "The Acela Express"]
     train_images = [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgpndFGRh0OdiMPDMfqmBY7T9uj4pOx9rvAL0kgFUQKP4az_WdsBuspvMlRbhS6CxtoAL57BqjI5o&usqp=CAU&ec=48665698",
+        "https://i.pinimg.com/originals/f6/7b/c7/f67bc71e7c90cab10f8bb9837da2c6e1.png",
         "https://montanafreepress.org/wp-content/uploads/2022/02/20220213_AMT_Kootenai0023.jpeg",
         "https://upload.wikimedia.org/wikipedia/commons/0/04/Southwest_Chief_at_Devil%27s_Throne%2C_New_Mexico_%28cropped%29.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nASehAHzvwriTcwBnjQdhqV-9He9pWLqdEKlazJUn60QZsnW_Bv_jI5mynus9ukqFU85PhZZ3t4&usqp=CAU&ec=48665698",

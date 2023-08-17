@@ -1,16 +1,45 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
 
-const TrainList = () => {
+function TrainList() {  
     const [trains, setTrains] = useState([]);
+    const [targetTrainId, setTargetTrainId] = useState(null);
+    const scrollToTrainRef = useRef(null);
+  
 
     useEffect(() => {
-        fetch("/api/trains")
-        .then((r) => r.json())
-        .then(setTrains);
-    }, []);
+      const hash = window.location.hash;
+      if (hash && hash.startsWith("#train-")) {
+        const trainId = parseInt(hash.substring(6), 10);
+        setTargetTrainId(trainId);
+    }
+}, []);
+
+
+
+
+useEffect(() => {
+      fetch("/api/trains")
+      .then((r) => {
+          if (r.ok) {
+              return r.json();
+            }
+        })
+        .then((trains) => {
+            setTrains(trains);
+            
+            // If there's a target train, scroll to it
+            if (targetTrainId !== null && scrollToTrainRef.current) {
+                scrollToTrainRef.current.scrollIntoView({ behavior: "smooth" });
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching trains:", error);
+        });
+    }, [targetTrainId]);
+
 
 
     function handleDeleteTrain(id) {
@@ -30,7 +59,7 @@ const TrainList = () => {
         <h1 style={{ fontSize: "2rem", fontFamily: "cascadia", color: "#f8f0e3", textAlign: "center" }}>Trains</h1>
             {trains.length > 0 ? (
                 trains.map((train) => (
-                    <Train key={train.id}>
+                    <Train key={train.id} ref={train.id === targetTrainId ? scrollToTrainRef : null}>
                         <Box>
                             <h3>{"Train Number: "+train.id}</h3>
                             <h3>{"Name: "+train.title}</h3>
@@ -59,6 +88,8 @@ const TrainList = () => {
 }
 
 
+
+
 const Wrapper = styled.section`
     width: 750px;
     margin: 40px auto;
@@ -81,5 +112,6 @@ const Image = styled.img`
   transform: scale(1.1); 
 }
 `;
+
 
 export default TrainList

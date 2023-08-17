@@ -256,8 +256,11 @@ class UserById(Resource):
         return make_response(
             user,
             200)
-api.add_resource(UserById, "/api/users/<int:id>")
+    
 
+
+
+api.add_resource(UserById, "/api/users/<int:id>")
 api.add_resource(Users,'/api/users')
 api.add_resource(Tickets, '/api/tickets')
 api.add_resource(Signup, '/api/signup')

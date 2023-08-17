@@ -37,14 +37,15 @@ function TicketList() {
             <Box>
               <h3>{"Ticket Number: " + ticket.id}</h3>
               <h3>{"Price: $" + ticket.price}</h3>
-              <CustomLink to={`/trains/${ticket.train.id}`}>
-                <h3>{"Train: " + ticket.train.title}</h3>
+
+              <CustomLink to={`/trains#train-${ticket.train.id}`}>
+              <h3>{"Train: " + ticket.train.title}</h3>
               <h3>{"Train Number: " + ticket.train.id}</h3>
                 <Image src={ticket.train.image_url} alt={`Train ${ticket.train.title}`} />
               </CustomLink>
 
 
-              <CustomLink to={`users/${ticket.user.id}`} >
+              <CustomLink to={`/users#user-${ticket.user.id}`}>
               <h3>{"Passenger: " + ticket.user.username}</h3>
               <h3>{"Passenger Number: " + ticket.user.id}</h3>
               <Image src={ticket.user.image_url} alt={`Passenger ${ticket.user.username}`} />

@@ -128,7 +128,7 @@ const Wrapper = styled.section`
 
 const WrapperChild = styled.div`
     position: absolute;
-    top: 65%;
+    top: 64%;
     left: 50%;
     transform: translate(-50%, -130%);
     width: 400px;
