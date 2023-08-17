@@ -116,7 +116,10 @@ const CustomLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    color: #007bff; 
+    color: red; 
+    ${Image} {
+      transform: scale(1.1);
+    }
   }
 `;
 

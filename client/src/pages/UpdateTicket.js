@@ -99,7 +99,7 @@ function UpdateTicket({ user }) {
           />
         </FormField>
         <Button disabled={isLoading} type="submit">
-          {isLoading ? "Loading..." : "Update Ticket"}
+          {isLoading ? "Loading..." : "Edit Ticket"}
         </Button>
         {errors && (
           <ul>
@@ -128,7 +128,7 @@ const Wrapper = styled.section`
 
 const WrapperChild = styled.div`
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -130%);
     width: 400px;
