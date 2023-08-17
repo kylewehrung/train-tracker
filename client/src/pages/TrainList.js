@@ -10,11 +10,22 @@ function TrainList() {
   
 
     useEffect(() => {
-      const hash = window.location.hash;
-      if (hash && hash.startsWith("#train-")) {
-        const trainId = parseInt(hash.substring(6), 10);
-        setTargetTrainId(trainId);
-    }
+        const hash = window.location.hash;
+        if (hash && hash.startsWith("#train-")) {
+          const trainIdString = hash.substring(7); // Remove the "#train-" prefix
+          console.log("Extracted Train ID String:", trainIdString);
+        
+          if (/^\d+$/.test(trainIdString)) {
+            const trainId = parseInt(trainIdString, 10);
+            console.log("Parsed Train ID:", trainId);
+            setTargetTrainId(trainId)
+          } else {
+            console.log("Invalid Train ID String:", trainIdString);
+          }
+        }
+        
+        
+        
 }, []);
 
 
@@ -53,6 +64,8 @@ useEffect(() => {
             }
         });
     }
+
+
 
     return (
         <Wrapper>

@@ -94,6 +94,7 @@ with app.app_context():
     available_users = list(users)
     available_trains = list(trains)
 
+
     tickets = []
 
     for _ in range(10):
