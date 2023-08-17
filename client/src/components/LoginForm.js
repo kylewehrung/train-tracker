@@ -72,7 +72,7 @@ function LoginForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-        <Button variant="fill" color="secondary" type="submit">
+        <Button color="secondary" type="submit">
           {formik.isSubmitting ? "Loading..." : "Login"}
         </Button>
       </FormField>
@@ -94,7 +94,7 @@ const CustomLabel = styled.label`
   background-image: linear-gradient(rgba(225, 185, 185, 0.75), rgba(225, 255, 255, 0.9));
   background-size: 240% auto; /* Adjust the width */
   background-origin: border-box; /* Apply gradient within the border box */
-  border-radius: 25px; /* Adjust the corner radius */
+  border-radius: 15px; /* Adjust the corner radius */
   padding: 10px; /* Add padding for better appearance */
   font-size: 2em;
   font-family: cascadia;

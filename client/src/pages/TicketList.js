@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useUser } from "../components/context";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
 
+
 function TicketList() {
+  const { user } = useUser();
   const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
@@ -14,16 +17,24 @@ function TicketList() {
   }, []);
 
   function handleDeleteTicket(id) {
-    fetch(`/api/tickets/${id}`, {
-      method: "DELETE",
-    }).then((r) => {
-      if (r.ok) {
-        setTickets((tickets) =>
-          tickets.filter((ticket) => ticket.id !== id)
-        );
-      }
-    });
+    const ticketToDelete = tickets.find((ticket) => ticket.id === id);
+  
+    if (user.id === ticketToDelete.user.id) {
+      fetch(`/api/tickets/${id}`, {
+        method: "DELETE",
+      }).then((r) => {
+        if (r.ok) {
+          setTickets((tickets) =>
+            tickets.filter((ticket) => ticket.id !== id)
+          );
+        }
+      });
+    } else {
+      // Currently just a messsge to myself for testing
+      console.log(user.id);
+    }
   }
+  
 
   return (
     <Wrapper>
@@ -117,7 +128,7 @@ const CustomLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    color: red; 
+    color: blue; 
     ${Image} {
       transform: scale(1.1);
     }

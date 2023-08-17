@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { UserContext } from "./context";
 import { Switch, Route, useHistory } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <AppWrapper>
+    <UserContext.Provider value={{ user, setUser }}>
       <NavBar user={user} setUser={setUser} />
       <MainContainer>
         <Switch>
@@ -55,6 +57,7 @@ function App() {
           </Route>
         </Switch>
       </MainContainer>
+      </UserContext.Provider>
     </AppWrapper>
   );
 }

@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 const COLORS = {
   primary: {
-    "--main": "black",
-    "--accent": "#f8f0e3",
+    "--main": "rgba(255, 255, 255, 0.65)",
+    "--accent": "black",
   },
   secondary: {
     "--main": "black",
     "--accent": "#f8f0e3",
   },
 };
+
 
 function Button({ variant = "fill", color = "primary", ...props }) {
   let Component;
@@ -24,7 +25,7 @@ function Button({ variant = "fill", color = "primary", ...props }) {
 
 const ButtonBase = styled.button`
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.25rem;
   border: 1px solid transparent;
   border-radius: 6px;
   padding: 8px 16px;
@@ -33,6 +34,7 @@ const ButtonBase = styled.button`
 
 const FillButton = styled(ButtonBase)`
   background-color: var(--main);
+  font-weight: bold;
   color: var(--accent);
 
   &:hover {
