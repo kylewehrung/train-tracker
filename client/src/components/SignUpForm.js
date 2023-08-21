@@ -118,7 +118,7 @@ function SignUpForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-      <Button type="submit" disabled={formik.isSubmitting}>
+      <Button color="secondary" type="submit" disabled={formik.isSubmitting}>
           {formik.isSubmitting ? "Loading..." : "Sign Up"}
         </Button>
       </FormField>
@@ -155,7 +155,7 @@ const CustomLabel = styled.label`
   background-image: linear-gradient(rgba(225, 185, 185, 0.75), rgba(225, 255, 255, 0.9));
   background-size: 240% auto; /* Adjust the width */
   background-origin: border-box; /* Apply gradient within the border box */
-  border-radius: 25px; /* Adjust the corner radius */
+  border-radius: 15px; /* Adjust the corner radius */
   padding: 10px; /* Add padding for better appearance */
   font-size: 2em;
   font-family: cascadia;
