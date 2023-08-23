@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useUser } from "../components/context";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
@@ -17,9 +17,6 @@ function TicketList() {
   }, []);
 
   function handleDeleteTicket(id) {
-    const ticketToDelete = tickets.find((ticket) => ticket.id === id);
-  
-    if (user.id === ticketToDelete.user.id) {
       fetch(`/api/tickets/${id}`, {
         method: "DELETE",
       }).then((r) => {
@@ -29,10 +26,6 @@ function TicketList() {
           );
         }
       });
-    } else {
-      // Currently just a messsge to myself for testing
-      console.log(user.id);
-    }
   }
   
 
@@ -62,7 +55,8 @@ function TicketList() {
               <Image src={ticket.user.image_url} alt={`Passenger ${ticket.user.username}`} />
               </CustomLink>
               <CustomContainer>
-
+              {user.id === ticket.user.id && (
+                <>
               <Button
                 onClick={() => handleDeleteTicket(ticket.id)}
                 style={{  marginTop: "15px", marginRight: "50px", backgroundColor: "black", color: "#f8f0e3" }}
@@ -74,7 +68,8 @@ function TicketList() {
               style={{  marginTop: "15px", backgroundColor: "black", color: "#f8f0e3" }}
               > Edit Ticket
               </Button>
-
+              </>
+              )}
               </CustomContainer>
               <ReactMarkdown>{ticket.description}</ReactMarkdown>
             </Box>
@@ -89,7 +84,7 @@ function TicketList() {
             Make a New Ticket
           </Button>
         </>
-
+        
       )}
     </Wrapper>
   );
