@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import { useUser } from "../components/context";
 import styled from "styled-components";
 import { Button, FormField, Input, Label } from "../styles";
 
 
 
 
-function UpdateTicket({ user }) {
+function UpdateTicket() {
   const [trainId, setTrainId] = useState("");
   const [userId, setUserId] = useState("");
   const [price, setPrice] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState(null);
+  const { user } = useUser();
   const { id } = useParams();
   const history = useHistory();
 
