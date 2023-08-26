@@ -54,15 +54,19 @@ useEffect(() => {
 
 
     function handleDeleteTrain(id) {
-        fetch(`/api/trains/${id}`, {
-            method: "DELETE",
-        }).then((r) => {
-            if (r.ok) {
-                setTrains((trains) =>
-                trains.filter((train) => train.id !== id)
-                );
-            }
-        });
+        const confirmDelete = window.confirm("Are you sure you want to delete this train?");
+        
+        if (confirmDelete) {
+            fetch(`/api/trains/${id}`, {
+                method: "DELETE",
+            }).then((r) => {
+                if (r.ok) {
+                    setTrains((trains) =>
+                        trains.filter((train) => train.id !== id)
+                    );
+                }
+            });
+        }
     }
 
 
